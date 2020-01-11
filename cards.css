@@ -1,0 +1,27 @@
+.container {
+    margin: 5px;
+    width: auto;
+    height: 420px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding-left: 5px;
+    width: 222px;
+    height: 360px
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+}
+
+.flex-item {
+    flex: 0 0 auto;
+}
