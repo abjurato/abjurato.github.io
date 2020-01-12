@@ -69,7 +69,7 @@ struct Website: Rendarable {
         height: 420px;
     }
 
-    .container a:link {
+    .container > a:link {
         display: flex;
         text-decoration: none;
     }
@@ -142,6 +142,7 @@ struct Website: Rendarable {
 extension Node {
     fileprivate static func card(_ url: String, _ node: Node<HTML.BodyContext>, bgpath: String) -> Node<HTML.BodyContext> {
         .a(
+            .class("link"),
             .href(url),
             .div(
                 .class("item flex-item"),
@@ -157,7 +158,7 @@ extension Node {
         .tr(
             .td(.span(date, .style("color: #D3D3D3; font-style: bold;"))),
             .td(.span(" ")),
-            .td(.a(.href(url), text))
+            .td(.a(.class("link"), .href(url), text))
         )
     }
 }
