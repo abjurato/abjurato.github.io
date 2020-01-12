@@ -28,6 +28,8 @@ struct Website: Rendarable {
         --special-text-color: hsla(60, 100%, 50%, 0.5);
         --special-link-color: black;
         --border-color: black;
+
+        --special-left-padding: 120px;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -38,6 +40,12 @@ struct Website: Rendarable {
         }
     }
 
+    @media only screen and (max-width: 600px) {
+      :root {
+        --special-left-padding: 10px;
+      }
+    }
+
     @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
     h1 {
@@ -45,7 +53,7 @@ struct Website: Rendarable {
     }
 
     body {
-        padding-left: 120px;
+        padding-left: var(--special-left-padding);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
@@ -61,6 +69,11 @@ struct Website: Rendarable {
 
     .list {
         padding-left: 20px;
+    }
+
+    td {
+        vertical-align: baseline;
+        padding: 5px;
     }
 
     .comment {
@@ -163,7 +176,7 @@ extension Node {
     fileprivate static func row( _ url: String, _ date: Node<HTML.BodyContext>, _ text: Node<HTML.AnchorContext>) -> Node<HTML.TableContext> {
         .tr(
             .td(.span(date, .style("color: #D3D3D3;"))),
-            .td(.span(" "), .style("display: block; width: 50px;")),
+            .td(.span(" "), .style("display: block; width: 5px;")),
             .td(.a(.class("link"), .href(url), text))
         )
     }
