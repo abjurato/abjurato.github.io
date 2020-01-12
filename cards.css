@@ -4,7 +4,7 @@
     height: 420px;
 }
 
-.container > a:card {
+.container a:link {
     display: flex;
     text-decoration: none;
 }
