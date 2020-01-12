@@ -113,7 +113,8 @@ struct Website: Rendarable {
         .head(
             .title("(ノಠ益ಠ)ノ"),
             .stylesheet("cards.css"),
-            .stylesheet("general.css")
+            .stylesheet("general.css"),
+            .meta(.attribute(named: "viewport", value: "width=device-width"))
         ),
         .body(
             .h1("do {"),
