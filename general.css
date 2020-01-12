@@ -1,11 +1,31 @@
 :root {
     color-scheme: light dark;
     --special-text-color: hsla(60, 100%, 50%, 0.5);
+    --special-link-color: black;
     --border-color: black;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --special-text-color: hsla(60, 50%, 70%, 0.75);
+        --special-link-color: white;
+        --border-color: white;
+    }
+}
+
 body {
     padding-left: 120px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a:link, a:visited {
+    color: var(--special-link-color);
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
 }
 
 .list {

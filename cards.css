@@ -4,6 +4,11 @@
     height: 420px;
 }
 
+.container > a:card {
+    display: flex;
+    text-decoration: none;
+}
+
 .item {
     display: flex;
     justify-content: center;
@@ -14,6 +19,12 @@
     height: 360px
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     border-radius: 10px;
+
+    transition: all .1s ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
 }
 
 .flex {
