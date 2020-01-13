@@ -19,6 +19,7 @@ struct Website: Rendarable {
 /*  do {                                         */
     let topcards: [Topcard] = Topcards.all
 /*  } catch _ {                                  */
+    let externals: [External] = Externals.all
     let stories: [Story] = Stories.all
 /*  mailto                                       */
     
@@ -141,6 +142,10 @@ struct Website: Rendarable {
             .h1("} catch _ {"),
             .table (
                 .class("list"),
+                .forEach(externals) {
+                    .row($0.external, .text($0.date), .text($0.title)
+                    )
+                },
                 .forEach(stories) {
                     .row("stories/" + $0.filename, .text($0.date), .text($0.title)
                     )

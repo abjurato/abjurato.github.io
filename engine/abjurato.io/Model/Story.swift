@@ -11,6 +11,12 @@ import Plot
 
 typealias HTMLConstructor = ()->HTML
 
+struct External {
+    let external: String
+    let date: String
+    let title: String
+}
+
 class Story: Rendarable {
     var filename: String
     var external: String?
