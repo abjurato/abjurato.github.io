@@ -80,6 +80,35 @@ struct Website: Rendarable {
     .comment {
         font-style: italic;
     }
+
+    .filepath {
+        background: #f4f4f4;
+        color: #666;
+        page-break-inside: avoid;
+        font-family: monospace;
+        overflow: auto;
+        padding: 0.1em 0.5em;
+        display: inline-block;
+        word-wrap: break-word;
+        border-radius: 0.1em;
+    }
+
+    .snippet {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        color: #666;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 0.5em 0.5em;
+        display: block;
+        word-wrap: break-word;
+        border-radius: 0.2em;
+    }
     """)
     
     var cards = CSS("""

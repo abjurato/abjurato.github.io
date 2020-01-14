@@ -11,10 +11,16 @@ import Plot
 
 typealias HTMLConstructor = ()->HTML
 
-struct External {
+class External {
     let external: String
     let date: String
     let title: String
+    
+    init(external: String, date: String, title: String) {
+        self.external = external
+        self.date = date
+        self.title = title
+    }
 }
 
 class Story: Rendarable {
