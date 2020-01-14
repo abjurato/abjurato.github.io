@@ -17,7 +17,9 @@ extension Topcards {
                 imagePath: "images/1.jpeg") {
             HTML(
                 .head(
-                    .stylesheet("../general.css")
+                    .stylesheet("../general.css"),
+                    .meta(.init(name: "property", value: "og:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "property", value: "og:image"), .content("https://github.com/abjurato/abjurato.github.io/blob/master/images/1.jpeg?raw=true"))
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),
