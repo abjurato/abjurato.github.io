@@ -18,8 +18,11 @@ extension Topcards {
             HTML(
                 .head(
                     .stylesheet("../general.css"),
+                    .title("re-sign decrypted binary (with Apple Developer account)"),
                     .meta(.init(name: "property", value: "og:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
-                    .meta(.init(name: "property", value: "og:image"), .content("https://github.com/abjurato/abjurato.github.io/blob/master/images/1.jpeg?raw=true"))
+                    .meta(.init(name: "property", value: "og:type"), .content("website")),
+                    .meta(.init(name: "property", value: "og:image"), .content("https://abjurato.github.io/images/1.jpeg")),
+                    .meta(.init(name: "property", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html"))
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),
