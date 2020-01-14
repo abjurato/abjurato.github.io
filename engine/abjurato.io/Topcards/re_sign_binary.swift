@@ -19,10 +19,24 @@ extension Topcards {
                 .head(
                     .stylesheet("../general.css"),
                     .title("re-sign decrypted binary (with Apple Developer account)"),
-                    .meta(.init(name: "property", value: "og:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
-                    .meta(.init(name: "property", value: "og:type"), .content("website")),
-                    .meta(.init(name: "property", value: "og:image"), .content("https://abjurato.github.io/images/1.jpeg")),
-                    .meta(.init(name: "property", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html"))
+                    
+//                    .meta name="og:site_name" content="Swift by Sundell">
+                    .meta(.init(name: "name", value: "og:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "name", value: "og:type"), .content("website")),
+                    .meta(.init(name: "name", value: "og:image"), .content("https://abjurato.github.io/images/1.jpeg")),
+                    .meta(.init(name: "name", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html")),
+                    
+                    .meta(.init(name: "name", value: "twitter:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "name", value: "twitter:type"), .content("website")),
+                    .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpeg")),
+                    .meta(.init(name: "name", value: "twitter:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html"))
+                    
+//                    <meta name="twitter:description" content="Weekly Swift articles, podcasts and tips by John Sundell">
+//                    <meta name="og:description" content="Weekly Swift articles, podcasts and tips by John Sundell">
+//                    <meta name="description" content="Weekly Swift articles, podcasts and tips by John Sundell">
+//
+//                    <meta name="twitter:card" content="summary">
+                    
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),
