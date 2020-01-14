@@ -16,6 +16,7 @@ extension Topcards {
                 title: "re-sign decrypted binary (with Apple Developer account)",
                 imagePath: "images/1.jpeg") {
             HTML(
+                .init(stringLiteral: "prefix=\"og: http://ogp.me/ns#\""),
                 .head(
                     .stylesheet("../general.css"),
                     .title("re-sign decrypted binary (with Apple Developer account)"),
@@ -27,7 +28,7 @@ extension Topcards {
                     .meta(.init(name: "name", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html")),
                     
                     .meta(.init(name: "name", value: "twitter:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
-                    .meta(.init(name: "name", value: "twitter:type"), .content("website")),
+                    .meta(.init(name: "name", value: "twitter:type"), .content("article")),
                     .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpeg")),
                     .meta(.init(name: "name", value: "twitter:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html"))
                     
