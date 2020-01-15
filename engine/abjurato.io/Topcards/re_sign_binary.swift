@@ -34,7 +34,7 @@ extension Topcards {
                     .meta(.init(name: "property", value: "og:url"), .content(address.absoluteString)),
                     .meta(.init(name: "property", value: "og:description"), .content(title)),
                     
-                    .meta(.init(name: "name", value: "twitter:card"), .content("summary_large_image")),
+                    .meta(.init(name: "name", value: "twitter:card"), .content("summary")),
                     .meta(.init(name: "name", value: "twitter:title"), .content(title)),
                     .meta(.init(name: "name", value: "twitter:site"), .content("@abjurato")),
                     .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpg")),
