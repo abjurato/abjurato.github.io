@@ -10,14 +10,20 @@ import Foundation
 import Plot
 
 extension Topcards {
-    static func decrypt_binary() -> Topcard {
-        Topcard(filename: #function.removingBrackets() + ".html",
+    static func decrypt_binary(base: URL, parent: URL) -> Topcard {
+        let filename = "decrypt_binary.html"
+        let address = base.appendingPathComponent(filename)
+        let image = base.appendingPathComponent("images").appendingPathComponent("2.jpeg")
+        let generalCss = base.appendingPathComponent("general.css")
+        let title = "decrypt iOS app (from jailbroken device memory)"
+        
+        return Topcard(filename: filename,
                 date: "",
-                title: "decrypt iOS app (from jailbroken device memory)",
-                imagePath: "images/2.jpeg") {
+                title: title,
+                imagePath: image) {
             HTML(
                 .head(
-                    .stylesheet("../general.css")
+                    .stylesheet(generalCss.absoluteString)
                 ),
                 .body(
                     .h1("Decrypt iOS app (from jailbroken device memory)"),

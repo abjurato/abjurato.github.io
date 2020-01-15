@@ -12,8 +12,8 @@ import Foundation
 class Topcard: Story {
     var imagePath: String
     
-    init(filename: String, date: String, title: String, imagePath: String, constructor: HTMLConstructor? = nil) {
-        self.imagePath = imagePath
+    init(filename: String, date: String, title: String, imagePath: URL, constructor: HTMLConstructor? = nil) {
+        self.imagePath = imagePath.absoluteString
         super.init(filename: filename, date: date, title: title, constructor: constructor)
     }
 }

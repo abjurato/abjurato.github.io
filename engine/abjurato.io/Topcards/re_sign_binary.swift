@@ -10,29 +10,35 @@ import Foundation
 import Plot
 
 extension Topcards {
-    static func re_sign_binary() -> Topcard {
-        Topcard(filename: #function.removingBrackets() + ".html",
+    static func re_sign_binary(base: URL, parent: URL) -> Topcard {
+        let filename = "re_sign_binary.html"
+        let address = base.appendingPathComponent(filename)
+        let image = base.appendingPathComponent("images").appendingPathComponent("1.jpg")
+        let generalCss = base.appendingPathComponent("general.css")
+        let title = "re-sign decrypted binary (with Apple Developer account)"
+        
+        return Topcard(filename: filename,
                 date: "",
-                title: "re-sign decrypted binary (with Apple Developer account)",
-                imagePath: "images/1.jpeg") {
+                title: title,
+                imagePath: image) {
             HTML(
                 .lang(.english),
                 .head(
-                    .stylesheet("../general.css"),
+                    .stylesheet(generalCss.absoluteString),
                     .title("re-sign decrypted binary (with Apple Developer account)"),
                     
-                    .meta(.init(name: "property", value: "og:site_name"), .content("abjurato.github.io")),
-                    .meta(.init(name: "property", value: "og:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "property", value: "og:site_name"), .content(base.absoluteString)),
+                    .meta(.init(name: "property", value: "og:title"), .content(title)),
                     .meta(.init(name: "property", value: "og:type"), .content("website")),
-                    .meta(.init(name: "property", value: "og:image"), .content("https://abjurato.github.io/images/1.jpeg")),
-                    .meta(.init(name: "property", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html")),
-                    .meta(.init(name: "property", value: "og:description"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "property", value: "og:image"), .content(image.absoluteString)),
+                    .meta(.init(name: "property", value: "og:url"), .content(address.absoluteString)),
+                    .meta(.init(name: "property", value: "og:description"), .content(title)),
                     
                     .meta(.init(name: "name", value: "twitter:card"), .content("summary_large_image")),
-                    .meta(.init(name: "name", value: "twitter:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "name", value: "twitter:title"), .content(title)),
                     .meta(.init(name: "name", value: "twitter:site"), .content("@abjurato")),
-                    .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpeg")),
-                    .meta(.init(name: "name", value: "twitter:description"), .content("Re-sign decrypted binary (with Apple Developer account)"))
+                    .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpg")),
+                    .meta(.init(name: "name", value: "twitter:description"), .content(title))
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),

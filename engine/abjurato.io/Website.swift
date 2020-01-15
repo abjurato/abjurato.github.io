@@ -17,7 +17,7 @@ struct Website: Rendarable {
     var filename: String = "index.html"
     
 /*  do {                                         */
-    let topcards: [Topcard] = Topcards.all
+    let topcards: [Topcard] = Topcards.all(base: URL(string: "https://abjurato.github.io/")!, parent: URL(string: "https://abjurato.github.io/")!)
 /*  } catch _ {                                  */
     let externals: [External] = Externals.all
     let stories: [Story] = Stories.all
