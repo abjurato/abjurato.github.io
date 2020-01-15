@@ -25,20 +25,11 @@ extension Topcards {
                 .lang(.english),
                 .head(
                     .stylesheet(generalCss.absoluteString),
-                    .title("re-sign decrypted binary (with Apple Developer account)"),
-                    
-                    .meta(.init(name: "property", value: "og:site_name"), .content(base.absoluteString)),
-                    .meta(.init(name: "property", value: "og:title"), .content(title)),
-                    .meta(.init(name: "property", value: "og:type"), .content("website")),
-                    .meta(.init(name: "property", value: "og:image"), .content(image.absoluteString)),
-                    .meta(.init(name: "property", value: "og:url"), .content(address.absoluteString)),
-                    .meta(.init(name: "property", value: "og:description"), .content(title)),
-                    
-                    .meta(.init(name: "name", value: "twitter:card"), .content("summary")),
-                    .meta(.init(name: "name", value: "twitter:title"), .content(title)),
-                    .meta(.init(name: "name", value: "twitter:site"), .content("@abjurato")),
-                    .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpg")),
-                    .meta(.init(name: "name", value: "twitter:description"), .content(title))
+                    .title(title),
+                    .socialImageLink("https://abjurato.github.io/images/1.jpg"),
+                    .twitterCardType(.summary),
+                    .description(title),
+                    .url(address.absoluteString)
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),

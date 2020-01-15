@@ -157,7 +157,7 @@ struct Website: Rendarable {
             .title("(ノಠ益ಠ)ノ"),
             .stylesheet("cards.css"),
             .stylesheet("general.css"),
-            .meta(.name("viewport"), .content("width=device-width, initial-scale=1"))
+            .viewport(.accordingToDevice, initialScale: 1)
         ),
         .body(
             .h1("do {"),
