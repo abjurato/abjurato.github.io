@@ -12,7 +12,7 @@ import Plot
 extension Topcards {
     static func decrypt_binary(base: URL, parent: URL) -> Topcard {
         let filename = "decrypt_binary.html"
-        let address = base.appendingPathComponent(filename)
+        let address = parent.appendingPathComponent(filename)
         let image = base.appendingPathComponent("images").appendingPathComponent("2.jpeg")
         let generalCss = base.appendingPathComponent("general.css")
         let title = "decrypt iOS app (from jailbroken device memory)"

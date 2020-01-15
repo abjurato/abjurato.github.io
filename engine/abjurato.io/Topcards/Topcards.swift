@@ -12,7 +12,7 @@ enum Topcards {
     static func all(base: URL, parent: URL) -> [Topcard] {
         [
             self.re_sign_binary(base: base, parent: parent),
-            decrypt_binary(base: base, parent: parent)
+            self.decrypt_binary(base: base, parent: parent)
         ]
 //        Topcard(filename: "", date: "", title: "find resources of an app (on jailbroken device)", imagePath: "images/4.jpeg"),
 //        Topcard(filename: "", date: "", title: "lib injection (on jailbroken device)", imagePath: "images/5.jpeg"),

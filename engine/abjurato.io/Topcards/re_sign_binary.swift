@@ -12,7 +12,7 @@ import Plot
 extension Topcards {
     static func re_sign_binary(base: URL, parent: URL) -> Topcard {
         let filename = "re_sign_binary.html"
-        let address = base.appendingPathComponent(filename)
+        let address = parent.appendingPathComponent(filename)
         let image = base.appendingPathComponent("images").appendingPathComponent("1.jpeg")
         let generalCss = base.appendingPathComponent("general.css")
         let title = "re-sign decrypted binary (with Apple Developer account)"
