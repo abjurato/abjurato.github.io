@@ -23,7 +23,12 @@ extension Topcards {
                 imagePath: image) {
             HTML(
                 .head(
-                    .stylesheet(generalCss.absoluteString)
+                    .stylesheet(generalCss.absoluteString),
+                    .title(title),
+                    .socialImageLink(image.absoluteString),
+                    .twitterCardType(.summary),
+                    .description(title),
+                    .url(address.absoluteString)
                 ),
                 .body(
                     .h1("Decrypt iOS app (from jailbroken device memory)"),

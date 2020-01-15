@@ -26,7 +26,7 @@ extension Topcards {
                 .head(
                     .stylesheet(generalCss.absoluteString),
                     .title(title),
-                    .socialImageLink("https://abjurato.github.io/images/1.jpg"),
+                    .socialImageLink(image.absoluteString),
                     .twitterCardType(.summary),
                     .description(title),
                     .url(address.absoluteString)
