@@ -27,13 +27,12 @@ extension Topcards {
                     .meta(.init(name: "property", value: "og:image"), .content("https://abjurato.github.io/images/1.jpeg")),
                     .meta(.init(name: "property", value: "og:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html")),
                     .meta(.init(name: "property", value: "og:description"), .content("Re-sign decrypted binary (with Apple Developer account)")),
-                        
-                    .meta(.init(name: "property", value: "twitter:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
-                    .meta(.init(name: "property", value: "twitter:type"), .content("article")),
-                    .meta(.init(name: "property", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpeg")),
-                    .meta(.init(name: "property", value: "twitter:url"), .content("https://abjurato.github.io/topcards/re_sign_binary.html")),
-                    .meta(.init(name: "property", value: "twitter:card"), .content("summary_large_image")),
-                    .meta(.init(name: "property", value: "twitter:description"), .content("Re-sign decrypted binary (with Apple Developer account)"))
+                    
+                    .meta(.init(name: "name", value: "twitter:card"), .content("summary_large_image")),
+                    .meta(.init(name: "name", value: "twitter:title"), .content("Re-sign decrypted binary (with Apple Developer account)")),
+                    .meta(.init(name: "name", value: "twitter:site"), .content("@abjurato")),
+                    .meta(.init(name: "name", value: "twitter:image"), .content("https://abjurato.github.io/images/1.jpeg")),
+                    .meta(.init(name: "name", value: "twitter:description"), .content("Re-sign decrypted binary (with Apple Developer account)"))
                 ),
                 .body(
                     .h1("Re-sign binary (with Apple Developer account)"),
