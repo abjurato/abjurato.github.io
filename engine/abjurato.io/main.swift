@@ -9,4 +9,4 @@
 import Foundation
 
 let outputDirectory = URL(fileURLWithPath: CommandLine.arguments.last!, isDirectory: true)
-Website().render(base: outputDirectory)
+Website(base: URL(string: "https://abjurato.github.io/")!).render(base: outputDirectory)

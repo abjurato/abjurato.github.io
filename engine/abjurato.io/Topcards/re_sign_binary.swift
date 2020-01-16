@@ -32,6 +32,8 @@ extension Topcards {
                     .url(address.absoluteString)
                 ),
                 .body(
+                    .a(.text("(lldb) thread step-out"), .href(base), .class("comment")),
+                    
                     .h1("Re-sign binary (with Apple Developer account)"),
                     .h2("macOS side"),
                     .p(

@@ -10,8 +10,11 @@ import Foundation
 import Plot
 
 struct Website: Rendarable {
-    init() {
+    let base: URL
+    init(base: URL) {
+        self.base = base
         _ = self.index
+        _ = topcards
     }
     
     var filename: String = "index.html"
@@ -153,11 +156,17 @@ struct Website: Rendarable {
     """)
     
     lazy var index = HTML(
+        .lang(.english),
         .head(
             .title("(ノಠ益ಠ)ノ"),
-            .stylesheet("cards.css"),
-            .stylesheet("general.css"),
-            .viewport(.accordingToDevice, initialScale: 1)
+            .stylesheet(self.base.appendingPathComponent("cards.css")),
+            .stylesheet(self.base.appendingPathComponent("general.css")),
+            .viewport(.accordingToDevice, initialScale: 1),
+                
+            .socialImageLink(self.base.appendingPathComponent("images").appendingPathComponent("0.jpeg")),
+            .twitterCardType(.summary),
+            .description("Notes on iOS development and reverse engineering"),
+            .url(self.base.absoluteString)
         ),
         .body(
             .h1("do {"),

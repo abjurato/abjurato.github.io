@@ -31,6 +31,8 @@ extension Topcards {
                     .url(address.absoluteString)
                 ),
                 .body(
+                    .a(.text("(lldb) thread step-out"), .href(base)), .class("comment"),
+                    
                     .h1("Decrypt iOS app (from jailbroken device memory)"),
                     
                     .h2("Manually"),
