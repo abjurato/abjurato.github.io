@@ -14,7 +14,7 @@ struct Website: Rendarable {
     init(base: URL) {
         self.base = base
         _ = self.index
-        _ = topcards
+        _ = self.topcards
     }
     
     var filename: String = "index.html"
@@ -50,15 +50,30 @@ struct Website: Rendarable {
       }
     }
 
-    @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+    @font-face {
+        font-family: JetBrainsMono;
+        src: url("fonts/JetBrainsMono-Regular.ttf");
+        font-style: normal;
+    }
+    @font-face {
+        font-family: JetBrainsMono;
+        src: url(fonts/JetBrainsMono-Italic.ttf");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: JetBrainsMono;
+        src: url(fonts/JetBrainsMono-Bold-Italic.ttf");
+        font-style: italic;
+        font-weight: bold;
+    }
 
     h1 {
-        font-family: 'Playfair Display', black italic;
+        font-size: 3em;
     }
 
     body {
         padding-left: var(--special-left-padding);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: "JetBrainsMono", -apple-system, Roboto, Helvetica, sans-serif;
     }
 
     a:link, a:visited {
@@ -81,14 +96,15 @@ struct Website: Rendarable {
     }
 
     .comment {
-        font-style: italic;
+        font-style: regular;
+        font-size: 0.7em;
     }
 
     .filepath {
         background: #f4f4f4;
         color: #666;
         page-break-inside: avoid;
-        font-family: monospace;
+        font-family: 'JetBrainsMono', monospace;
         overflow: auto;
         padding: 0.1em 0.5em;
         display: inline-block;
@@ -101,7 +117,7 @@ struct Website: Rendarable {
         border: 1px solid #ddd;
         color: #666;
         page-break-inside: avoid;
-        font-family: monospace;
+        font-family: 'JetBrainsMono', monospace;
         font-size: 15px;
         line-height: 1.6;
         margin-bottom: 1.6em;
@@ -159,8 +175,8 @@ struct Website: Rendarable {
         .lang(.english),
         .head(
             .title("(ノಠ益ಠ)ノ"),
-            .stylesheet(self.base.appendingPathComponent("cards.css")),
-            .stylesheet(self.base.appendingPathComponent("general.css")),
+            .stylesheet("cards.css"),
+            .stylesheet("general.css"),
             .viewport(.accordingToDevice, initialScale: 1),
                 
             .socialImageLink(self.base.appendingPathComponent("images").appendingPathComponent("0.jpeg")),
@@ -218,7 +234,7 @@ extension Node {
 extension Node {
     fileprivate static func row( _ url: String, _ date: Node<HTML.BodyContext>, _ text: Node<HTML.AnchorContext>) -> Node<HTML.TableContext> {
         .tr(
-            .td(.span(date, .style("color: #D3D3D3;"))),
+            .td(.span(date, .style("color: #D3D3D3;"), .class("comment"))),
             .td(.span(" "), .style("display: block; width: 5px;")),
             .td(.a(.class("link"), .href(url), text))
         )
