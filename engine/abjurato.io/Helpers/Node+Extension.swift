@@ -11,7 +11,7 @@ import Plot
 
 extension Node {
     static func inline(_ nodes: Node<HTML.BodyContext>) -> Node<HTML.BodyContext> {
-        .span(nodes, .class("filepath"))
+        .span(nodes, .class("inlinecode"))
     }
     
     static func snippet(_ nodes: Node<HTML.BodyContext>) -> Node<HTML.BodyContext> {

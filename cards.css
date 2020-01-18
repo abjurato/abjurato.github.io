@@ -16,15 +16,23 @@
     margin: 30px;
     padding-left: 5px;
     width: 222px;
-    height: 360px
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    height: 360px;
+
     border-radius: 10px;
+
+    
+    background: var(--item-background);
+    box-shadow: 8px 8px 13px var(--item-box-shadow-top),
+                -8px -8px 13px var(--item-box-shadow-bottom);
+
+    box-shadow: 8px 8px 13px var(--item-box-shadow-top),
+                -8px -8px 13px var(--item-box-shadow-bottom);
 
     transition: all .1s ease-in-out;
 }
 
 .item:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .flex {

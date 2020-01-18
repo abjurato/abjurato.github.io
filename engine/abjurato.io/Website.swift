@@ -34,6 +34,10 @@ struct Website: Rendarable {
         --border-color: black;
 
         --special-left-padding: 120px;
+
+        --item-background: #ebebeb;
+        --item-box-shadow-top: #a5a5a5;
+        --item-box-shadow-bottom:  #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -41,6 +45,10 @@ struct Website: Rendarable {
             --special-text-color: hsla(60, 50%, 70%, 0.75);
             --special-link-color: white;
             --border-color: white;
+
+            --item-background: #222222;
+            --item-box-shadow-top: #181818;
+            --item-box-shadow-bottom:  #2c2c2c;
         }
     }
 
@@ -100,11 +108,13 @@ struct Website: Rendarable {
         font-size: 0.7em;
     }
 
-    .filepath {
+    .inlinecode {
         background: #f4f4f4;
         color: #666;
         page-break-inside: avoid;
-        font-family: 'JetBrainsMono', monospace;
+        font-family: monospace;
+        font-size: 11px;
+        line-height: 10px;
         overflow: auto;
         padding: 0.1em 0.5em;
         display: inline-block;
@@ -117,9 +127,9 @@ struct Website: Rendarable {
         border: 1px solid #ddd;
         color: #666;
         page-break-inside: avoid;
-        font-family: 'JetBrainsMono', monospace;
-        font-size: 15px;
-        line-height: 1.6;
+        font-family: monospace;
+        font-size: 11px;
+        line-height: 10px;
         margin-bottom: 1.6em;
         max-width: 100%;
         overflow: auto;
@@ -149,15 +159,23 @@ struct Website: Rendarable {
         margin: 30px;
         padding-left: 5px;
         width: 222px;
-        height: 360px
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        height: 360px;
+
         border-radius: 10px;
+
+        
+        background: var(--item-background);
+        box-shadow: 8px 8px 13px var(--item-box-shadow-top),
+                    -8px -8px 13px var(--item-box-shadow-bottom);
+
+        box-shadow: 8px 8px 13px var(--item-box-shadow-top),
+                    -8px -8px 13px var(--item-box-shadow-bottom);
 
         transition: all .1s ease-in-out;
     }
 
     .item:hover {
-        transform: scale(1.1);
+        transform: scale(1.02);
     }
 
     .flex {

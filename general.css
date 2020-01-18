@@ -5,6 +5,10 @@
     --border-color: black;
 
     --special-left-padding: 120px;
+
+    --item-background: #ebebeb;
+    --item-box-shadow-top: #a5a5a5;
+    --item-box-shadow-bottom:  #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,6 +16,10 @@
         --special-text-color: hsla(60, 50%, 70%, 0.75);
         --special-link-color: white;
         --border-color: white;
+
+        --item-background: #222222;
+        --item-box-shadow-top: #181818;
+        --item-box-shadow-bottom:  #2c2c2c;
     }
 }
 
@@ -71,11 +79,13 @@ td {
     font-size: 0.7em;
 }
 
-.filepath {
+.inlinecode {
     background: #f4f4f4;
     color: #666;
     page-break-inside: avoid;
-    font-family: 'JetBrainsMono', monospace;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 10px;
     overflow: auto;
     padding: 0.1em 0.5em;
     display: inline-block;
@@ -88,9 +98,9 @@ td {
     border: 1px solid #ddd;
     color: #666;
     page-break-inside: avoid;
-    font-family: 'JetBrainsMono', monospace;
-    font-size: 15px;
-    line-height: 1.6;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 10px;
     margin-bottom: 1.6em;
     max-width: 100%;
     overflow: auto;
