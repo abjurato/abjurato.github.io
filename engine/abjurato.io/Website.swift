@@ -34,6 +34,7 @@ struct Website: Rendarable {
         --border-color: black;
         --special-background: #d7d7d7;
 
+        --special-max-width: 90%;
         --special-left-padding: 120px;
 
         --item-background: #ebebeb;
@@ -57,6 +58,7 @@ struct Website: Rendarable {
     @media only screen and (max-width: 600px) {
       :root {
         --special-left-padding: 10px;
+        --special-max-width: 100%;
       }
     }
 
@@ -134,12 +136,16 @@ struct Website: Rendarable {
         font-size: 11px;
         line-height: 10px;
         margin-bottom: 1.6em;
-        max-width: 80%;
+        max-width: var(--special-max-width);
         overflow: auto;
         padding: 0.5em 0.5em;
         display: block;
         word-wrap: break-word;
         border-radius: 0.2em;
+    }
+
+    .gist {
+        max-width: var(--special-max-width);
     }
     """)
     

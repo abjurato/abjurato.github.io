@@ -43,13 +43,13 @@ extension Topcards {
                             .li(.text("Change bundleId in "), .inline("Payload/<NAME>.app/Info.plist"), .text(" to something matching your Apple Developer account")),
                             .li(
                                 .text("Minimal "), .inline("<whatever>.entitlements"), .text(" should have following info:"),
-                                .script(.src("https://gist.github.com/abjurato/ce9afee76e783ebb6b767785635d31d1.js"))
+                                .gist(.src("https://gist.github.com/abjurato/ce9afee76e783ebb6b767785635d31d1.js"))
                             ),
                             .li(.text("Create app with same bundle id and all the additional capabilities you've included in entitlements xml on "), .a(.href("https://developer.apple.com/account/ios/identifier/bundle"), .text("Apple Developer website"))),
                             .li(.text("Create provisioning profile for your app id, your device, your developer account on "), .a(.href("https://developer.apple.com/account/ios/profile/production"), .text("Apple Developer website")), .text(", download it and rename to "), .inline("embedded.mobileprovision")),
                             .li(
                                 .text("Check that you have correct signing identity and re-sign the binary"),
-                                .script(.src("https://gist.github.com/abjurato/5767d2195912756433b08fa958aa4ac9.js"))
+                                .gist(.src("https://gist.github.com/abjurato/5767d2195912756433b08fa958aa4ac9.js"))
                             ),
                             .li(
                                 .text("Pack new ipa with this binary:"),
@@ -61,7 +61,7 @@ extension Topcards {
                     .h2("iOS side"),
                     .p(
                         .text("On a jaibroken device you can modify entitlements and simulate codesigning using ldid utility"),
-                        .script(.src("https://gist.github.com/abjurato/202b53df3e7184210368045f57a043ee.js"))
+                        .gist(.src("https://gist.github.com/abjurato/202b53df3e7184210368045f57a043ee.js"))
                     ),
                     
                     .br(),

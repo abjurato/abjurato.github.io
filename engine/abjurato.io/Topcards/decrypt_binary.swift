@@ -50,7 +50,7 @@ extension Topcards {
                             .li(.text("[macOS side] find details of encrypted section in load commands:"),
                                 .snippet("$ otool -l <MAC-PATH> | grep crypt"),
                                 .text("that will give output similar to this one:"),
-                                .script(.src("https://gist.github.com/abjurato/d02aa3d04cef70c78e408ab76030e90a.js"))
+                                .gist(.src("https://gist.github.com/abjurato/d02aa3d04cef70c78e408ab76030e90a.js"))
                                 )
                         )
                     ),
@@ -62,7 +62,7 @@ extension Topcards {
                             .li(.text("[iOS side] run the app tell debugserver to attech to it and wait for debugger on some port"),
                                 .snippet("# debugserver *:<PORT> -a <NAME>")),
                             .li(.text("[macOS side] Run lldb, connect to port exposed by debugserver from iOS:"),
-                                .script(.src("https://gist.github.com/abjurato/21f676fa5c7ba85d5bccf824e5f806b1.js"))),
+                                .gist(.src("https://gist.github.com/abjurato/21f676fa5c7ba85d5bccf824e5f806b1.js"))),
                             .li(.text("[macOS side] Inject dump into encrypted binary you've obtained earlier"),
                                 .snippet("$ dd seek=<cryptoff> bs=1 conv=notrunc if=<DUMP> of=<BINARY>")),
                             .li(.text("Disable load command managing decryption of encrypted section in the patched binary:"),

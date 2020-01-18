@@ -25,7 +25,7 @@ extension Topcards {
             HTML(
                 .lang(.english),
                 .head(
-                    .stylesheet(generalCss.absoluteString),
+                    .stylesheet("../general.css"),//generalCss.absoluteString),
                     .title(title),
                     .socialImageLink(image.absoluteString),
                     .twitterCardType(.summary),
@@ -76,18 +76,18 @@ extension Topcards {
                             .li(.text("Connect "), .inline("objection"), .text(" to the app by correct name:"),
                                 .snippet("$ objection --gadget=\"Telegram\" explore")),
                             .li(.text("Command "), .inline("env"), .text(" will output the directories:"),
-                                .script(.src("https://gist.github.com/abjurato/1553ca7fa811570a0592892a10090fec.js")))
+                                .gist(.src("https://gist.github.com/abjurato/1553ca7fa811570a0592892a10090fec.js")))
                         )
                     ),
                     
                     .h2("LSDTrip (1, 2, 3, 4)"),
                     .p (
                         .text("Utility called "), .inline("LSDTrip") ,.text(" by Jonathan Levin gives more complete output. It is open source, but installation instructions in [2] are a little bit outdated - as of iOS 12 entitlements should be as follows:"),
-                        .script(.src("https://gist.github.com/abjurato/78f2e6b85a475317f04bfd966367c6f8.js")),
+                        .gist(.src("https://gist.github.com/abjurato/78f2e6b85a475317f04bfd966367c6f8.js")),
                         .text("and a little bit verbose output of "), .inline("# ./lsdtrip.arm64 dump"), .text(" will contain "), .inline("appContainer"), .text(", "), .inline("dataContainer"), .text(", "), .inline("groups"),
-                        .script(.src("https://gist.github.com/abjurato/1f8a85aa0f148f2db3bc24cb7d9b2738.js")),
+                        .gist(.src("https://gist.github.com/abjurato/1f8a85aa0f148f2db3bc24cb7d9b2738.js")),
                         .text(" and a list of "), .inline("plugin Identif"), .text("iers, each of which has it's own place in the output down below:"),
-                        .script(.src("https://gist.github.com/abjurato/4c819634786f4d41b5edb63df1ee22e4.js"))
+                        .gist(.src("https://gist.github.com/abjurato/4c819634786f4d41b5edb63df1ee22e4.js"))
                     ),
                     
                     .br(),

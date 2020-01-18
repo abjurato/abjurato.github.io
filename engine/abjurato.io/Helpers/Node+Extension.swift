@@ -18,3 +18,9 @@ extension Node {
         .span(nodes, .class("snippet"))
     }
 }
+
+public extension Node where Context: HTMLScriptableContext {
+    static func gist(_ nodes: Node<HTML.ScriptContext>...) -> Node<HTML.BodyContext> {
+        .div(.element(named: "script", nodes: nodes), .class("gist"))
+    }
+}
