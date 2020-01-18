@@ -16,9 +16,10 @@ extension Topcards {
         let image = base.appendingPathComponent("images").appendingPathComponent("2.jpeg")
         let generalCss = base.appendingPathComponent("general.css")
         let title = "decrypt iOS app (from jailbroken device memory)"
+        let date = "Jan 2020, iOS 12.4"
         
         return Topcard(filename: filename,
-                date: "",
+                date: date,
                 title: title,
                 imagePath: image) {
             HTML(
@@ -88,7 +89,10 @@ extension Topcards {
                     
                     .br(),
                     .h2("Sources"),
-                    .p(.a(.href("https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/master/Module-2/README.md"), .text("[1] Reverse Engineering iOS Applications by Ivan Rodriguez")))
+                    .p(.a(.href("https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/master/Module-2/README.md"), .text("[1] Reverse Engineering iOS Applications by Ivan Rodriguez"))),
+                    
+                    .br(),
+                    .div(.text(date), .class("comment"))
                 )
             )
         }

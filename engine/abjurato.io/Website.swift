@@ -32,6 +32,7 @@ struct Website: Rendarable {
         --special-text-color: hsla(60, 100%, 50%, 0.5);
         --special-link-color: black;
         --border-color: black;
+        --special-background: #d7d7d7;
 
         --special-left-padding: 120px;
 
@@ -45,6 +46,7 @@ struct Website: Rendarable {
             --special-text-color: hsla(60, 50%, 70%, 0.75);
             --special-link-color: white;
             --border-color: white;
+            --special-background: #222222;
 
             --item-background: #222222;
             --item-box-shadow-top: #181818;
@@ -80,6 +82,7 @@ struct Website: Rendarable {
     }
 
     body {
+        background-color: var(--special-background);
         padding-left: var(--special-left-padding);
         font-family: "JetBrainsMono", -apple-system, Roboto, Helvetica, sans-serif;
     }
@@ -131,7 +134,7 @@ struct Website: Rendarable {
         font-size: 11px;
         line-height: 10px;
         margin-bottom: 1.6em;
-        max-width: 100%;
+        max-width: 80%;
         overflow: auto;
         padding: 0.5em 0.5em;
         display: block;

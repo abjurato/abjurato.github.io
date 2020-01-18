@@ -16,9 +16,10 @@ extension Topcards {
         let image = base.appendingPathComponent("images").appendingPathComponent("1.jpeg")
         let generalCss = base.appendingPathComponent("general.css")
         let title = "re-sign decrypted binary (with Apple Developer account)"
+        let date = "Jan 2020, iOS 12.4"
         
         return Topcard(filename: filename,
-                date: "",
+                date: date,
                 title: title,
                 imagePath: image) {
             HTML(
@@ -67,7 +68,10 @@ extension Topcards {
                     .h2("Sources"),
                     .p(.a(.href("https://www.objc.io/issues/17-security/inside-code-signing/"), .text("[1] Theory about codesigning"))),
                     .p(.a(.href("https://coderwall.com/p/dgdgeq/how-to-re-sign-ios-builds"), .text("[2] How to re-sign iOS builds"))),
-                    .p(.a(.href("https://www.vantagepoint.sg/blog/85-patching-and-re-signing-ios-apps"), .text("[3] Patching and Re-Signing iOS Apps")))
+                    .p(.a(.href("https://www.vantagepoint.sg/blog/85-patching-and-re-signing-ios-apps"), .text("[3] Patching and Re-Signing iOS Apps"))),
+                    
+                    .br(),
+                    .div(.text(date), .class("comment"))
                 )
             )
         }
