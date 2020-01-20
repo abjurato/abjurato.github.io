@@ -25,7 +25,7 @@ extension Topcards {
             HTML(
                 .lang(.english),
                 .head(
-                    .stylesheet("../general.css"),//generalCss.absoluteString),
+                    .stylesheet(generalCss.absoluteString),
                     .title(title),
                     .socialImageLink(image.absoluteString),
                     .twitterCardType(.summary),
@@ -93,7 +93,7 @@ extension Topcards {
                     .br(),
                     .h2("Sources"),
                     .p(.a(.href("https://mobile-security.gitbook.io/mobile-security-testing-guide/ios-testing-guide/0x06b-basic-security-testing#using-objection"), .text("[1] OWASP Mobile Security Testing Guide"))),
-                    .p(.a(.href("http://newosxbook.com/tools/lsdtrip.html"), .text("[2] LSDTrip - Take a ride down the LaunchServices.framework rabbithole"))),
+                    .p(.a(.href("http://newosxbook.com/tools/lsdtrip.html"), .text("[2] LSDTrip - Take a ride down the LaunchServices.framework rabbithole by Jonathan Levin"))),
                     
                     .br(),
                     .div(.text(date), .class("comment"))
