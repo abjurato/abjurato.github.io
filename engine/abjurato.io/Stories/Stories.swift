@@ -2,104 +2,84 @@
 //  Stories.swift
 //  abjurato.io
 //
-//  Created by Anatoly Rosencrantz on 12/01/2020.
+//  Created by Anatoly Rosencrantz on 27/09/2020.
 //  Copyright © 2020 Anatoly Rosencrantz. All rights reserved.
 //
 
 import Foundation
 import Plot
 
-enum Externals {
-    static var all: [External] = [
-        // ProtonMail Blog
-        External(external: "https://protonmail.com/blog/ios-security-model/",
-                  date: "30/10/2019",
-                  title: "[co-author] ProtonMail iOS client security"),
-        External(external: "https://protonmail.com/blog/ios-security-recommendations/",
-                 date: "30/10/2019",
-                 title: "[co-author] Security recommendation: enable FaceID or PIN protection on the ProtonMail iOS app"),
-        
-        // Medium
-        External(external: "https://medium.com/@abjurato/iterating-over-swiftui-views-delivered-in-a-swift-package-a6ffb98132ce",
-                 date: "23/07/2019",
-                 title: "Iterating over SwiftUI views delivered in a Swift Package"),
-        
-        Spacer(),
-        
-        External(external: "https://medium.com/@abjurato/24-7-accelerometer-tracking-with-apple-watch-3dab2eb68f23",
-                 date: "24/03/2018",
-                 title: "24/7 Accelerometer Tracking with Apple Watch"),
-        External(external: "https://medium.com/@abjurato/using-raspberry-pi-as-an-apple-timemachine-d2fceecb6876",
-                 date: "16/03/2018",
-                 title: "Using Raspberry Pi as an Apple TimeMachine"),
-        
-        Spacer(),
-        
-        External(external: "https://medium.com/@abjurato/adaptive-design-in-ios-9c784d630494",
-                 date: "09/07/2017",
-                 title: "Adaptive Design in iOS"),
-        External(external: "https://medium.com/@abjurato/m1-improper-platform-usage-part-2-5716ee1492e",
-                 date: "15/03/2017",
-                 title: "OWASP for iOS: M1 - Improper Platform usage, Part 2"),
-        External(external: "https://medium.com/@abjurato/unified-logging-and-activity-tracing-aa77ffe9fb53",
-                 date: "29/01/2017",
-                 title: "Unified Logging and Activity Tracing"),
-        
-        Spacer(),
-        
-        External(external: "https://medium.com/@abjurato/owasp-for-ios-m1-improper-platform-usage-part-1-7aff742c50ee",
-                 date: "24/12/2016",
-                 title: "OWASP for iOS: M1 - Improper Platform usage, Part 1"),
-        External(external: "https://medium.com/@abjurato/swift-perfect-mustache-and-postgresql-on-heroku-4-9f4ea43c9529",
-                 date: "04/05/2016",
-                 title: "Swift, Perfect, mustache and PostgreSQL on Heroku - 4"),
-        External(external: "https://medium.com/@abjurato/swift-perfect-mustache-and-postgresql-on-heroku-3-e5c1f0982e0b",
-                 date: "03/05/2016",
-                 title: "Swift, Perfect, mustache and PostgreSQL on Heroku - 3"),
-        External(external: "https://medium.com/@abjurato/swift-perfect-mustache-and-postgresql-on-heroku-2-415bd1a0e930",
-                 date: "01/05/2016",
-                 title: "Swift, Perfect, mustache and PostgreSQL on Heroku - 2"),
-        External(external: "https://medium.com/@abjurato/swift-perfect-mustache-and-postgresql-on-heroku-48d483fe8489",
-                 date: "30/04/2016",
-                 title: "Swift, Perfect, mustache and PostgreSQL on Heroku")
-    ]
-}
-
-fileprivate class Spacer: External {
-    init() {
-        super.init(external: "", date: "", title: "")
-    }
-}
-
 enum Stories {
-    static var all: [Story] = [ ]
-    
-    /*
-        // our page with redirect
-         
-        Story(external: "https://medium.com/@abjurato/iterating-over-swiftui-views-delivered-in-a-swift-package-a6ffb98132ce",
-              date: "23/06/2019",
-              title: "Iterating over SwiftUI views delivered in a Swift Package"),
+    static func all(base: URL, parent: URL) -> [Story] {[
+        Story(filename: "fullScreenCover.html", date: "27/09/2020", title: "Back-port .fullScreenCover to SwiftUI 1.0", constructor: self.full_screen_cover(base, parent))
+    ]}
+}
+
+extension Stories {
+    static func full_screen_cover(_ base: URL, _ parent: URL) -> HTMLConstructor {
+        let storyname = "fullScreenCover"
+        let filename = storyname + ".html"
+        let address = parent.appendingPathComponent(filename)
+        let image = base.appendingPathComponent("images").appendingPathComponent("0.jpeg")
+        let generalCss = base.appendingPathComponent("general.css")
+        let title = "Back-port .fullScreenCover to SwiftUI 1.0"
+        let date = "27/09/2020"
         
-         
-        // our page
-         
-        Story(filename: "24-03-2018.html", date: "24/03/2018", title: "24/7 Accelerometer Tracking with Apple Watch") {
-            HTML (
-                .head(
-                    .stylesheet("../general.css")
+        return { HTML (
+            .head(
+                .stylesheet(generalCss.absoluteString),
+                .title(title),
+                .socialImageLink(image.absoluteString),
+                .twitterCardType(.summary),
+                .description(title),
+                .url(address.absoluteString)
+            ),
+            .body (
+                .a(.text("(lldb) thread step-out"), .href(base)), .class("comment"),
+                
+                .h1("\(title)"),
+                .h2("Modal presentation in SwiftUI"),
+                
+                .p(.text("SwiftUI 2.0 presented on WWDC20 brings us a lot of small improvements and additions to the APIs. In iOS 13 we already had API to open views modally in a bottom-rising sheet, but whatever the content’s presentation mode was, there was no way to present it full screen.")),
+                .p(.text("Real-life example: early versions of our app had to present Camera of "), .inline("UIImagePickerController"), .text(" in such sheet which looked very stupid.")),
+                
+                .p(.text("One of the new APIs adds an ability to open views modally - "), .inline("fullScreenCover(isPresented:onDismiss:content:):")),
+                .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_01.png"))),
+                .p(.text("Unfortunately, this view modifier is available only on iOS 14 and higher. ")),
+                
+                .h2("How can it be back ported to iOS 13?"),
+                
+                .p(
+                    .text("Short answer: with help of UIKit and thanks to its interoperability with SwiftUI. "),
+                    .ol(
+                        .li("As one can remember, UIKit is managing view hierarchy by means of ", .inline("UIViewControllers"), .text(" which can serve as presenters to each other. In a simple cases presentation transition (animation and which part of the screen the presented controller’s view will take) depends on presenting controller’s "), .inline(".presentationMode"), .text(";")),
+                        .li("SwiftUI can wrap ", .inline("UIViewControllers"), .text(" into "), .inline("UIViewControllerRepresentable"), .text(" views and embed into hierarchy like any other View. Such controllers have 2 important methods ("), .inline("makeUIViewController"), .text(", "), .inline("dismantleUIViewController"), .text(") which will help us manage presentation process"))
+                    )
                 ),
-                .body (
-                    .h1("So empty"),
-                    .h2("much unemplemented")
-                )
+                
+                .p(
+                    .text("So, generally the plan is:"),
+                    .ol(
+                        .li("1. Add invisible ", .inline("UIViewController"), .text(" to parent SwiftUI view")),
+                        .li("2. Provide this controller with a child SwitUI view that needs to be presented in a full screen modal"),
+                        .li("3. When this controller appears in the hierarchy, it will present the child using UIKit APIs"),
+                        .li("4. When the child should be dismissed, the controller should be removed from the hierarchy")
+                    ),
+                    .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_02.png")))
+                ),
+                
+                .p("Production code will be more complex, but for the sake of simplicity let’s omit edge cases:"),
+                .gist(.src("https://gist.github.com/abjurato/386c32affe61eabab1ff4f5bd715ae89.js")),
+                
+                .p(
+                    .text("And empowered by the beauty of "), .inline("ViewModifiers"), .text(" we can keep code almost the same! More about approaches to backwards compatibility in SwiftUI: https://swiftui-lab.com/backward-compatibility/")
+                ),
+                
+                .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_03.png"))),
+                
+                .br(),
+                .div(.text(date), .class("comment"))
             )
-        },
-        
-         
-        // not found page
-         
-        Story(filename: "16-03-2018.html", date: "16/03/2018", title: "Using Raspberry Pi as an Apple TimeMachine"),
-         
-    */
+        ) }
+    }
 }

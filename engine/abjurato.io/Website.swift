@@ -15,6 +15,7 @@ struct Website: Rendarable {
         self.base = base
         _ = self.index
         _ = self.topcards
+        _ = self.stories
     }
     
     var filename: String = "index.html"
@@ -23,7 +24,7 @@ struct Website: Rendarable {
     let topcards: [Topcard] = Topcards.all(base: URL(string: "https://abjurato.github.io/")!, parent: URL(string: "https://abjurato.github.io/topcards")!)
 /*  } catch _ {                                  */
     let externals: [External] = Externals.all
-    let stories: [Story] = Stories.all
+    let stories: [Story] = Stories.all(base: URL(string: "https://abjurato.github.io/")!, parent: URL(string: "https://abjurato.github.io/stories")!)
 /*  mailto                                       */
     
     var general = CSS("""
@@ -223,13 +224,13 @@ struct Website: Rendarable {
             .h1("} catch _ {"),
             .table (
                 .class("list"),
-                .forEach(externals) {
-                    .row($0.external, .text($0.date), .text($0.title)
-                    )
-                },
+                
                 .forEach(stories) {
-                    .row("stories/" + $0.filename, .text($0.date), .text($0.title)
-                    )
+                    .row("stories/" + $0.filename, .text($0.date), .text($0.title))
+                },
+                
+                .forEach(externals) {
+                    .row($0.external, .text($0.date), .text($0.title) )
                 }
             ),
             
