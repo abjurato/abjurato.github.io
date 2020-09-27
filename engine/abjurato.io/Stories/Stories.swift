@@ -40,11 +40,11 @@ extension Stories {
                 .h1("\(title)"),
                 .h2("Modal presentation in SwiftUI"),
                 
-                .p(.text("SwiftUI 2.0 presented on WWDC20 brings us a lot of small improvements and additions to the APIs. In iOS 13 we already had API to open views modally in a bottom-rising sheet, but whatever the content’s presentation mode was, there was no way to present it full screen.")),
+                .p(.text("SwiftUI 2.0 presented on WWDC20 brings us a lot of small improvements and additions to the APIs. In iOS 13 we already had API to open views modally in a bottom-rising sheet, but whatever the contents presentation mode was, there was no way to present it full screen.")),
                 .p(.text("Real-life example: early versions of our app had to present Camera of "), .inline("UIImagePickerController"), .text(" in such sheet which looked very stupid.")),
                 
                 .p(.text("One of the new APIs adds an ability to open views modally - "), .inline("fullScreenCover(isPresented:onDismiss:content:):")),
-                .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_01.png"))),
+                .screenshot(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_01.png"))),
                 .p(.text("Unfortunately, this view modifier is available only on iOS 14 and higher. ")),
                 
                 .h2("How can it be back ported to iOS 13?"),
@@ -65,7 +65,7 @@ extension Stories {
                         .li("3. When this controller appears in the hierarchy, it will present the child using UIKit APIs"),
                         .li("4. When the child should be dismissed, the controller should be removed from the hierarchy")
                     ),
-                    .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_02.png")))
+                    .screenshot(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_02.png")))
                 ),
                 
                 .p("Production code will be more complex, but for the sake of simplicity let’s omit edge cases:"),
@@ -75,7 +75,7 @@ extension Stories {
                     .text("And empowered by the beauty of "), .inline("ViewModifiers"), .text(" we can keep code almost the same! More about approaches to backwards compatibility in SwiftUI: https://swiftui-lab.com/backward-compatibility/")
                 ),
                 
-                .img(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_03.png"))),
+                .screenshot(.src(base.appendingPathComponent("images").appendingPathComponent(storyname + "_03.png"))),
                 
                 .br(),
                 .div(.text(date), .class("comment"))

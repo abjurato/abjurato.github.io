@@ -23,4 +23,8 @@ public extension Node where Context: HTMLScriptableContext {
     static func gist(_ nodes: Node<HTML.ScriptContext>...) -> Node<HTML.BodyContext> {
         .div(.element(named: "script", nodes: nodes), .class("gist"))
     }
+    
+    static func screenshot(_ src: Attribute<HTML.ImageContext>) -> Node<HTML.BodyContext> {
+        .div(.img(src), .class("screenshot"))
+    }
 }

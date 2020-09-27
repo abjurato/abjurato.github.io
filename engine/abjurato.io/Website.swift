@@ -70,12 +70,12 @@ struct Website: Rendarable {
     }
     @font-face {
         font-family: JetBrainsMono;
-        src: url(fonts/JetBrainsMono-Italic.ttf");
+        src: url("fonts/JetBrainsMono-Italic.ttf");
         font-style: italic;
     }
     @font-face {
         font-family: JetBrainsMono;
-        src: url(fonts/JetBrainsMono-Bold-Italic.ttf");
+        src: url("fonts/JetBrainsMono-Bold-Italic.ttf");
         font-style: italic;
         font-weight: bold;
     }
@@ -85,6 +85,7 @@ struct Website: Rendarable {
     }
 
     body {
+        max-width: 80%;
         background-color: var(--special-background);
         padding-left: var(--special-left-padding);
         font-family: "JetBrainsMono", -apple-system, Roboto, Helvetica, sans-serif;
@@ -147,6 +148,16 @@ struct Website: Rendarable {
 
     .gist {
         max-width: var(--special-max-width);
+    }
+
+    .screenshot {
+        max-width: var(--special-max-width);
+    }
+
+    img {
+      display: block;
+      width: 80%;
+      height: auto;
     }
     """)
     
