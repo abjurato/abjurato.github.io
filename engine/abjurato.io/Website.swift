@@ -152,6 +152,7 @@ struct Website: Rendarable {
 
     .screenshot {
         max-width: var(--special-max-width);
+        padding: 15px 15px 15px 15px;
     }
 
     img {
