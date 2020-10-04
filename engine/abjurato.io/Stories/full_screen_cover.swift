@@ -84,7 +84,7 @@ extension Stories {
                 .br(),
                 .h2("Following steps"),
                 .p(.a(.href("https://swiftui-lab.com/backward-compatibility/"), .text("[1] More about approaches to backwards compatibility in SwiftUI"))),
-                .p(.a(.href("https://coderwall.com/p/dgdgeq/how-to-re-sign-ios-builds"), .text("[2] How to re-sign iOS builds"))),
+                .p(.a(.href("https://github.com/shaps80/Storage"), .text("[2] Backport of AppStorage for iOS 13 which can be used as a drop-in replacement"))),
                 
                 .br(),
                 .div(.text(date), .class("comment"))
