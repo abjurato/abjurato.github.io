@@ -122,12 +122,12 @@ td {
 
 .screenshot {
     max-width: var(--special-max-width);
-    max-height: var(--special-max-width);
     padding: 15px 15px 15px 15px;
 }
 
 img {
   display: block;
-  width: 80%;
+  max-width: 80%;
+  max-height: 80%;
   height: auto;
 }

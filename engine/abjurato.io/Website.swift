@@ -157,7 +157,8 @@ struct Website: Rendarable {
 
     img {
       display: block;
-      width: 80%;
+      max-width: 80%;
+      max-height: 80%;
       height: auto;
     }
     """)
