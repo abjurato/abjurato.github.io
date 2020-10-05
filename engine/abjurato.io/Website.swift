@@ -275,7 +275,7 @@ extension Node {
 extension Node {
     fileprivate static func row( _ url: String, _ date: Node<HTML.BodyContext>, _ text: Node<HTML.AnchorContext>) -> Node<HTML.TableContext> {
         .tr(
-            .td(.span(date, .style("color: #D3D3D3;"), .class("comment"))),
+            .td(.span(date, .style("opacity: 0.5;"), .class("comment"))),
             .td(.span(" "), .style("display: block; width: 5px;")),
             .td(.a(.class("link"), .href(url), text))
         )
