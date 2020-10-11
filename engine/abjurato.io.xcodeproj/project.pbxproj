@@ -12,6 +12,7 @@
 		AB4D0B592520AF9900BEACFF /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0B582520AF9900BEACFF /* Stories.swift */; };
 		AB4D0B5C2520AFE000BEACFF /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0B5B2520AFE000BEACFF /* Info.swift */; };
 		AB4D0B602520EF2000BEACFF /* full_screen_cover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4D0B5F2520EF2000BEACFF /* full_screen_cover.swift */; };
+		AB75107C2533565C00DF7CE4 /* kindle_ebooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75107B2533565C00DF7CE4 /* kindle_ebooks.swift */; };
 		AB96A49923CB2645003D7B56 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB96A49823CB2645003D7B56 /* Story.swift */; };
 		AB96A49B23CB265D003D7B56 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB96A49A23CB265D003D7B56 /* Renderable.swift */; };
 		AB96A49D23CB26A5003D7B56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB96A49C23CB26A5003D7B56 /* main.swift */; };
@@ -47,6 +48,7 @@
 		AB4D0B582520AF9900BEACFF /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
 		AB4D0B5B2520AFE000BEACFF /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		AB4D0B5F2520EF2000BEACFF /* full_screen_cover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = full_screen_cover.swift; sourceTree = "<group>"; };
+		AB75107B2533565C00DF7CE4 /* kindle_ebooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kindle_ebooks.swift; sourceTree = "<group>"; };
 		AB96A49823CB2645003D7B56 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		AB96A49A23CB265D003D7B56 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		AB96A49C23CB26A5003D7B56 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				AB4D0B582520AF9900BEACFF /* Stories.swift */,
 				AB4D0B5F2520EF2000BEACFF /* full_screen_cover.swift */,
 				ABF742742529F40F0009039B /* alpina_ebooks.swift */,
+				AB75107B2533565C00DF7CE4 /* kindle_ebooks.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				ABF282D723D322B80072E6C5 /* find_resources.swift in Sources */,
 				ABF742752529F40F0009039B /* alpina_ebooks.swift in Sources */,
 				AB96A49F23CB312D003D7B56 /* Topcard.swift in Sources */,
+				AB75107C2533565C00DF7CE4 /* kindle_ebooks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

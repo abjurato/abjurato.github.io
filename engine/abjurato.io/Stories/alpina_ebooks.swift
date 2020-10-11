@@ -16,7 +16,7 @@ extension Stories {
         let address = parent.appendingPathComponent(filename)
         let image = base.appendingPathComponent("images").appendingPathComponent("1.jpeg")
         let generalCss = base.appendingPathComponent("general.css")
-        let title = "iOS App Forensics for eBooks Smuggling"
+        let title = "Alpina.Books: iOS App Forensics for eBooks Smuggling"
         let date = "04/10/2020"
         
         return { HTML (
