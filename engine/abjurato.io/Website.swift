@@ -175,13 +175,10 @@ struct Website: Rendarable {
         text-decoration: none;
     }
 
-    .container > h2 {
-        color:#c3a343;
-        -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(transparent, transparent),
-        url(http://www.theblogmarket.co/wp-content/uploads/2015/11/GOLD-11.jpg) repeat;
-        background: -o-linear-gradient(transparent, transparent);
-        -webkit-background-clip: text;
+    .container h2 {
+        background-image: linear-gradient(to right, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+        color:transparent;
+        -webkit-background-clip:text;
     }
 
     .item {
