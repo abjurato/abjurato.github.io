@@ -85,7 +85,7 @@ struct Website: Rendarable {
     }
 
     body {
-        max-width: 80%;
+        max-width: var(--special-max-width);
         background-color: var(--special-background);
         padding-left: var(--special-left-padding);
         font-family: "JetBrainsMono", -apple-system, Roboto, Helvetica, sans-serif;
