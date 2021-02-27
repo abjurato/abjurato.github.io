@@ -9,6 +9,15 @@
     text-decoration: none;
 }
 
+.container > h2 {
+    color:#c3a343;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(transparent, transparent),
+    url(http://www.theblogmarket.co/wp-content/uploads/2015/11/GOLD-11.jpg) repeat;
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+}
+
 .item {
     display: flex;
     justify-content: center;

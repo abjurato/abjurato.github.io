@@ -175,6 +175,15 @@ struct Website: Rendarable {
         text-decoration: none;
     }
 
+    .container > h2 {
+        color:#c3a343;
+        -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(transparent, transparent),
+        url(http://www.theblogmarket.co/wp-content/uploads/2015/11/GOLD-11.jpg) repeat;
+        background: -o-linear-gradient(transparent, transparent);
+        -webkit-background-clip: text;
+    }
+
     .item {
         display: flex;
         justify-content: center;
@@ -251,7 +260,7 @@ struct Website: Rendarable {
             .footer(
                 .div(
                     .class("comment"),
-                    .a(.href("mailto:rosencrantz@protonmail.com"), .text("mailto:rosencrantz[at]protonmail.com"))
+                    .a(.href("mailto:rosencrantz@protonmail.com"), .text("mailto:rosencrantz\u{1F339}protonmail.com"))
                 )
             )
         )
